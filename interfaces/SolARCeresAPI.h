@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-#ifndef SOLAR_NONFREE_OPENCV_API_H
-#define SOLAR_NONFREE_OPENCV_API_H
+#ifndef SOLAR_CERES_API_H
+#define SOLAR_CERES_API_H
 
 #if _WIN32
-#ifdef SolARModuleNonFreeOpenCV_API_DLLEXPORT
-#define SOLAROPENCVNONFREE_EXPORT_API __declspec(dllexport)
-#else //SOLAROPENCVNONFREE_API_DLLEXPORT
-#define SOLAROPENCVNONFREE_EXPORT_API __declspec(dllimport)
-#endif //SOLAROPENCVNONFREE_API_DLLEXPORT
+#ifdef SolARModuleCeres_API_DLLEXPORT
+#define SOLARCERES_EXPORT_API __declspec(dllexport)
+#else //SOLARCERES_API_DLLEXPORT
+#define SOLARCERES_EXPORT_API __declspec(dllimport)
+#endif //SOLARCERES_API_DLLEXPORT
 #else //_WIN32
-#define SOLAROPENCVNONFREE_EXPORT_API
+#define SOLARCERES_EXPORT_API
 #endif //_WIN32
-#include "SolARModuleNonFreeOpencv_traits.h"
-#endif //SOLAR_NONFREE_OPENCV_API_H
+#include "SolARModuleCeres_traits.h"
+#endif //SOLAR_CERES_API_H

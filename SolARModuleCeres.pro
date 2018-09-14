@@ -2,8 +2,8 @@
 QT       -= core gui
 CONFIG -= qt
 
-## global definitions : target lib name, version
-TARGET = SolARModuleNonFreeOpenCV
+## global defintions : target lib name, version
+TARGET = SolARModuleCeres
 INSTALLSUBDIR = bcomBuild
 FRAMEWORK = $$TARGET
 VERSION=0.4.0
@@ -30,6 +30,8 @@ DEPENDENCIESCONFIG = shared
 
 include ($$(BCOMDEVROOT)/builddefs/qmake/templatelibconfig.pri)
 
+
+
 ## DEFINES FOR MSVC/INTEL C++ compilers
 msvc {
 DEFINES += "_BCOM_SHARED=__declspec(dllexport)"
@@ -37,19 +39,12 @@ DEFINES += "_BCOM_SHARED=__declspec(dllexport)"
 
 INCLUDEPATH += interfaces/
 
-HEADERS += interfaces/SolAROpencvNonFreeAPI.h \
-interfaces/SolARDescriptorsExtractorSURF64Opencv.h \
-interfaces/SolARDescriptorsExtractorSURF128Opencv.h \
-interfaces/SolARDescriptorsExtractorSIFTOpencv.h \
-interfaces/SolARKeypointDetectorNonFreeOpencv.h \
-    interfaces/SolARModuleNonFreeOpencv_traits.h
+HEADERS += interfaces/SolARCeresAPI.h \
+           interfaces/SolARBundlerCeres.h \
+           interfaces/SolARModuleCeres_traits.h
 
-SOURCES += src/SolARModuleNonFreeOpencv.cpp \
-    src/SolARDescriptorsExtractorSIFTOpencv.cpp \
-    src/SolARDescriptorsExtractorSURF64Opencv.cpp \
-    src/SolARDescriptorsExtractorSURF128Opencv.cpp \
-    src/SolARKeypointDetectorNonFreeOpencv.cpp
- 
+SOURCES += src/SolARModuleCeres.cpp \
+           src/SolARBundlerCeres.cpp
 unix {
 }
 
